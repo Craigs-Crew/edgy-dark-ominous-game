@@ -158,13 +158,13 @@ replacer.replace = function(itemstack, user, pointed_thing, mode)
         -- consume the item
         user:get_inventory():remove_item("main", daten[1] .. " 1")
     end
-    local node = {
+    local placed_node = {
         name = daten[1],
         param1 = daten[2],
         param2 = daten[3]
     }
     minetest.remove_node(pos)
-    minetest.item_place_node(ItemStack(node), user, pointed_thing, daten[3], false)
+    minetest.item_place_node(ItemStack(placed_node), user, pointed_thing, daten[3], false)
     return nil -- no item shall be removed from inventory
 end
 -- protection checking from Vanessa Ezekowitz' homedecor mod
